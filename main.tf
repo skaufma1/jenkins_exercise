@@ -11,5 +11,5 @@ resource "aws_instance" "example" {
 }
 
 resource "aws_s3_bucket" "mys3" {
-    bucket = "terraform-bucket-shmuel"
+    bucket = "terraform-bucket-shmuel-1"
 }
