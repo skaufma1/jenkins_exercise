@@ -11,5 +11,11 @@ resource "aws_instance" "example" {
 }
 
 resource "aws_s3_bucket" "mys3" {
-    bucket = "terraform-bucket-shmuel-1"
+    bucket = "terraform-bucket-shmuel-public"
+}
+
+resource "aws_s3_bucket_public_access_block" "mys3" {
+    bucket = aws_s3_bucket.mys3.id
+    block_public_acls = false
+    block_public_policy = false
 }
