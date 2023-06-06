@@ -12,7 +12,7 @@ stages {
         }        
     }
     stage ('Graph creation') {
-        Steps {
+        steps {
             sh 'terraform graph > graph.dot'
             sh 'dot -Tpng graph.dot -o graph.png'
             sh 'aws s3 cp ./graph.png terraform-bucket-shmuel-public-3'
